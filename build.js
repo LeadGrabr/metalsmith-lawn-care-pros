@@ -3,6 +3,9 @@ var reactTemplate = require('metalsmith-react-templates');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var fs = require('fs');
+var assets = require('metalsmith-assets');
+var watch = require('metalsmith-watch');
+var serve = require('metalsmith-serve');
 
 new Metalsmith(__dirname)
     .source('./src')
@@ -13,6 +16,19 @@ new Metalsmith(__dirname)
         baseFile: 'base.html',
         isStatic: false
     }))
+    .use(assets({
+        source: './assets', // relative to the working directory
+        destination: './' // relative to the build directory
+    }))
+    .use(serve())
+    .use(
+        watch({
+          paths: {
+            "${source}/**/*": true
+          },
+          livereload: true,
+        })
+    )
     .destination('./build')
     .build(function(err) {
         if (err) {

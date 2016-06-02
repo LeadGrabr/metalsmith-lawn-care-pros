@@ -1,10 +1,8 @@
 import React from 'react';
 import {findDOMNode} from 'react-dom';
 
-const Entry = React.createClass({
-    getInitialState() {
-        return this.props; //pulled from src/index.html
-    },
+export default class Entry extends React.Component {
+    state = {}
 
     _handleSubmit(evt) {
         evt.preventDefault();
@@ -16,7 +14,7 @@ const Entry = React.createClass({
             contents: 'Page changed without page reload',
             inputValue: value
         });
-    },
+    }
 
     render() {
         return (
@@ -41,6 +39,4 @@ const Entry = React.createClass({
             </div>
         );
     }
-});
-
-export default Entry;
+}
