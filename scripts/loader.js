@@ -6,7 +6,7 @@
   Modified from: http://www.crmarsh.com/react-ssr/
 */
 
-import EntryTemplate from '../templates/Entry.jsx';
+import HomeTemplate from '../templates/Home.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -14,13 +14,13 @@ import ReactDOM from 'react-dom';
   In an actual environment, this should be
   retrieved from a Store or some other database function.
 */
-const props = JSON.parse(document.getElementById('props').innerHTML);
+const props = {}
 
 // Render
-const Entry = React.createFactory(EntryTemplate);
+const Home = React.createFactory(HomeTemplate);
 
 ReactDOM.render(
-    new Entry(props),
+    new Home(props),
     document.getElementById('contents')
 );
 

@@ -1,6 +1,11 @@
 import React from 'react'
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = props
+  }
+
   render() {
     return (
       <div>
@@ -15,7 +20,7 @@ export default class Home extends React.Component {
                       <div className="flex-caption-cell">
                         <div className="flex-caption-text">
                           <h2>Making your surroundings<br />beautiful for 40 years</h2>
-                          <a href="book-service.html" className="basic-link">Let's get started</a>
+                          <a href="book-service.html" className="basic-link">{this.state.contents}</a>
                         </div>
                       </div>
                     </div>
@@ -29,7 +34,7 @@ export default class Home extends React.Component {
                       <div className="flex-caption-cell">
                         <div className="flex-caption-text">
                           <h2>Professional Gardening, Landscaping<br />&amp; Maintenance Services</h2>
-                          <a href="services.html" className="basic-link">See all services</a>
+                          <a href="services.html" className="basic-link">{this.state.title}</a>
                         </div>
                       </div>
                     </div>
@@ -184,18 +189,6 @@ export default class Home extends React.Component {
                         <div className="grid-item-inner">
                           <h4><a href="service-single.html">Plants, Flowers, Soils and Mulches</a></h4>
                           <p>A garden isn't a garden without plants and flowers. We provide you with a catalog of exactly the types of plants that can prosper in your soils.</p>
-                          <a href="service-single.html" className="more">View service details</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="item">
-                      <div className="service-grid-item grid-item format-standard">
-                        <a href="service-single.html" className="media-box">
-                          <img src="http://placehold.it/600x400&text=IMAGE+PLACEHOLDER" alt />
-                        </a>
-                        <div className="grid-item-inner">
-                          <h4><a href="service-single.html">Tree, Shrub &amp; Turf</a></h4>
-                          <p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada...</p>
                           <a href="service-single.html" className="more">View service details</a>
                         </div>
                       </div>
